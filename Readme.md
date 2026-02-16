@@ -60,10 +60,9 @@ python -m venv venv
 
 4. Install dependencies:
 ```bash
-pip install -r requirements.txt
+pip install os json flask flask-cors python-dotenv google-genai
 ```
 
-> **Note:** If `requirements.txt` doesn't exist, create one with your project dependencies (e.g., fastapi, uvicorn, openpyxl for Excel handling).
 
 ## Running the Project
 
@@ -89,6 +88,9 @@ cd frontend
 ```
 
 2. Open `index.html` in a modern web browser, or use a local server:
+
+Run the html file in live server
+
 ```bash
 # Using Python's built-in server
 python -m http.server 3000
@@ -99,46 +101,6 @@ npx http-server -p 3000
 
 Frontend will be available at `http://localhost:3000`
 
-## API Documentation
 
-Once the backend is running, visit:
-- **API Docs (Swagger):** `http://localhost:8000/docs`
-- **Alternative Docs (ReDoc):** `http://localhost:8000/redoc`
-
-## Usage
-
-1. Start the backend server
-2. Open the frontend in your browser
-3. Use the interface to upload and manage Excel files
-4. The frontend communicates with the backend APIs to process data
-
-## Development
-
-### Making Changes
-
-1. Backend changes are auto-reloaded with the `--reload` flag
-2. Frontend changes require a browser refresh
-3. Check the browser console for frontend errors
-4. Check terminal output for backend errors
-
-## Troubleshooting
-
-- **Port already in use:** Change the port number in the startup command
-- **Module not found errors:** Ensure `requirements.txt` is installed
-- **CORS errors:** Update backend CORS settings in `app.py`
-
-## Contributing
-
-Feel free to fork this repository and submit pull requests for any improvements.
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Support
-
-For issues and questions, please create an issue on the GitHub repository.
-
----
 
 **Happy coding! 🚀**
