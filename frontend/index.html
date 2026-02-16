@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI-Based Crop Recommendation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌱 AI-Based Crop Recommendation System</h1>
+
+    <form id="wastewaterForm">
+
+        <!-- Wastewater Type -->
+        <div class="card">
+            <h2>Select Wastewater Type</h2>
+            <select id="wasteType" required>
+                <option value="">-- Select Type --</option>
+                <option value="Laundry">Laundry / Greywater</option>
+                <option value="Industrial">Industrial Wastewater</option>
+                <option value="Treated Municipal">Treated Municipal Wastewater</option>
+            </select>
+        </div>
+
+        <!-- Greywater -->
+        <div class="card hidden" id="greyParams">
+            <h2>Greywater Parameters</h2>
+            <div class="grid">
+                <input type="number" step="0.1" placeholder="pH" id="ph_grey">
+                <input type="number" placeholder="EC (µS/cm)" id="ec_grey">
+                <input type="number" placeholder="TDS (mg/L)" id="tds_grey">
+                <input type="number" placeholder="Detergent (mg/L)" id="detergent">
+                <input type="number" placeholder="Turbidity (NTU)" id="turbidity">
+            </div>
+        </div>
+
+        <!-- Industrial -->
+        <div class="card hidden" id="industrialParams">
+            <h2>Industrial Parameters</h2>
+            <div class="grid">
+                <input type="number" step="0.1" placeholder="pH" id="ph_ind">
+                <input type="number" placeholder="COD (mg/L)" id="cod">
+                <input type="number" placeholder="BOD (mg/L)" id="bod">
+                <input type="number" placeholder="TDS (mg/L)" id="tds_ind">
+            </div>
+
+            <h3>Heavy Metals (mg/L)</h3>
+            <div id="heavyMetalsContainer"></div>
+            <button type="button" class="add-btn" onclick="addMetal()">+ Add Metal</button>
+        </div>
+
+        <!-- Municipal -->
+        <div class="card hidden" id="municipalParams">
+            <h2>Municipal Parameters</h2>
+            <div class="grid">
+                <input type="number" step="0.1" placeholder="pH" id="ph_mun">
+                <input type="number" placeholder="BOD (mg/L)" id="ec_mun">
+                <input type="number" placeholder="TDS (mg/L)" id="tds_mun">
+                <input type="number" placeholder="Residual Chlorine (mg/L)" id="chlorine">
+                <input type="number" placeholder="Coliform Count (CFU/100ml)" id="coliform">
+            </div>
+
+            <h3>Nutrients (mg/L)</h3>
+            <div id="nutrientsContainer"></div>
+            <button type="button" class="add-btn" onclick="addNutrient()">+ Add Nutrient</button>
+        </div>
+
+        <!-- Climate -->
+        <div class="card">
+            <h2>Climate & Environmental Inputs</h2>
+            <div class="grid">
+                <input type="number" placeholder="Temperature (°C)" id="temperature">
+                <input type="number" placeholder="Humidity (%)" id="humidity">
+                <input type="number" placeholder="Rainfall (mm)" id="rainfall">
+                <select id="soil">
+                    <option value="">-- Soil Type --</option>
+                    <option value="sandy">Sandy</option>
+                    <option value="clay">Clay</option>
+                    <option value="loam">Loam</option>
+                    <option value="silty">Silty</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Analyze & Recommend</button>
+        <div id="resultBox" class="result-box"></div>
+
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
